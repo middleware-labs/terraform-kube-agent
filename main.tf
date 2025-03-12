@@ -36,7 +36,8 @@ resource "helm_release" "cert_manager" {
 # Install middleware agent with auto-instrumentation using local chart
 resource "helm_release" "middleware_agent" {
   name             = "mw-agent"
-  chart            = "/home/naman/helm-charts/charts/mw-kube-agent-v3"  # Path to your local chart
+  repository       = "https://helm.middleware.io"  # Path to your local chart
+  chart            = "mw-kube-agent-v3"
   namespace        = kubernetes_namespace.middleware_agent.metadata[0].name
   create_namespace = false
 
