@@ -55,7 +55,7 @@ resource "helm_release" "middleware_agent" {
 
   set {
     name  = "global.mw.target"
-    value = "https://sliay.middleware.io:443"
+    value = "https://uid.middleware.io:443"
   }
 
   set {
